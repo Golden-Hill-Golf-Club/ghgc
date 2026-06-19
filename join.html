@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join Us — Golden Hill Golf Club</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', sans-serif;
+  color: #1a1a1a;
+  background: #fafaf5;
+  min-height: 100vh;
+}
+
+/* NAV */
+nav {
+  background: rgba(15, 45, 20, 0.98);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.nav-inner {
+  max-width: 1200px; margin: 0 auto; padding: 0 2rem;
+  display: flex; align-items: center; justify-content: space-between; height: 72px;
+}
+.nav-logo {
+  font-family: 'Playfair Display', serif; font-weight: 900;
+  font-size: 1.3rem; color: #c8a94e; text-decoration: none;
+  letter-spacing: 0.5px;
+}
+.nav-logo span { color: #fff; font-weight: 400; }
+.nav-back {
+  color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem;
+  font-weight: 500; display: flex; align-items: center; gap: 6px;
+  transition: color 0.3s;
+}
+.nav-back:hover { color: #c8a94e; }
+
+/* HERO BANNER */
+.page-hero {
+  background: linear-gradient(135deg, #0f2d14 0%, #1a4a22 40%, #0d2810 100%);
+  padding: 5rem 2rem 4rem; text-align: center; position: relative; overflow: hidden;
+}
+.page-hero::before {
+  content: ''; position: absolute; inset: 0; opacity: 0.05;
+  background-image: radial-gradient(circle at 20% 50%, #c8a94e 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+.page-hero-content { position: relative; z-index: 2; }
+.page-hero .badge {
+  display: inline-block; padding: 6px 20px; border-radius: 50px;
+  background: rgba(200,169,78,0.15); border: 1px solid rgba(200,169,78,0.3);
+  color: #c8a94e; font-size: 0.75rem; font-weight: 600; letter-spacing: 2px;
+  text-transform: uppercase; margin-bottom: 1.5rem;
+}
+.page-hero h1 {
+  font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 900; color: #fff; margin-bottom: 0.75rem;
+}
+.page-hero p {
+  font-size: 1.05rem; color: rgba(255,255,255,0.6); max-width: 520px;
+  margin: 0 auto; line-height: 1.7; font-weight: 300;
+}
+
+/* CONTENT */
+.content-section {
+  max-width: 700px; margin: -2rem auto 4rem; padding: 0 1.5rem; position: relative; z-index: 10;
+}
+.content-card {
+  background: #fff; border-radius: 20px; padding: 3rem;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.08); text-align: center;
+}
+.content-card h2 {
+  font-family: 'Playfair Display', serif; font-size: 1.6rem;
+  color: #0f2d14; margin-bottom: 1rem;
+}
+.content-card p {
+  font-size: 1.05rem; color: #555; line-height: 1.8; margin-bottom: 1.5rem;
+}
+.content-card a.email-link {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: #c8a94e; color: #0f2d14; padding: 16px 36px;
+  border-radius: 50px; font-weight: 700; font-size: 1rem;
+  text-decoration: none; letter-spacing: 0.5px; transition: all 0.3s;
+  box-shadow: 0 4px 20px rgba(200,169,78,0.3);
+}
+.content-card a.email-link:hover {
+  background: #dbbf5e; transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(200,169,78,0.4);
+}
+.content-card .note {
+  font-size: 0.82rem; color: #aaa; margin-top: 1.5rem; line-height: 1.6;
+}
+
+/* FOOTER */
+footer {
+  background: #0a1f0d; color: rgba(255,255,255,0.4);
+  padding: 2rem; text-align: center; font-size: 0.75rem;
+}
+footer a { color: #c8a94e; text-decoration: none; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a class='nav-logo' href='index.html'><img src="images/ghgc-logo.png" alt="GHGC" style="height:42px;vertical-align:middle;margin-right:8px;">GOLDEN HILL <span>Golf Club</span></a>
+    <a class='nav-back' href='index.html'>
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 12L6 8l4-4"/></svg>
+      Back to Home
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="page-hero-content">
+    <div class="badge">Join the Club</div>
+    <h1>Become a Member</h1>
+    <p>We welcome golfers of all levels and backgrounds. Come out for a day of golf and join in the fun!</p>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<div class="content-section">
+  <div class="content-card">
+    <h2>Interested in Joining?</h2>
+    <p>To join the club, send an email to Anthony Tam at:</p>
+    <a href="mailto:anthonyctam@gmail.com" class="email-link">anthonyctam@gmail.com</a>
+    <p class="note">We look forward to welcoming you to Golden Hill Golf Club!</p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2026 Golden Hill Golf Club &bull; Est. 1968 &bull; <a href='index.html'>Back to Home</a></p>
+</footer>
+
+</body>
+</html>
