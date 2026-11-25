@@ -236,31 +236,6 @@ section { padding: 6rem 2rem; }
 }
 .pillar-body p { font-size: 0.85rem; color: #666; line-height: 1.6; }
 
-/* ===== CHAMPIONS ===== */
-.champions { background: #fafaf5; }
-.champ-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
-  margin-top: 3rem;
-}
-.champ-card {
-  background: #fff; border-radius: 20px; padding: 2.5rem 2rem;
-  text-align: center; border: 1px solid rgba(200,169,78,0.15);
-  transition: all 0.3s; position: relative; overflow: hidden;
-}
-.champ-card::before {
-  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
-  background: linear-gradient(90deg, #c8a94e, #8b7030);
-}
-.champ-card:hover { transform: translateY(-4px); box-shadow: 0 15px 40px rgba(0,0,0,0.08); }
-.champ-trophy { font-size: 2.5rem; margin-bottom: 1rem; }
-.champ-photo { width: 100%; border-radius: 12px; margin-bottom: 1rem; object-fit: cover; max-height: 220px; }
-.champ-title {
-  font-family: 'Playfair Display', serif; font-size: 1.1rem;
-  color: #0f2d14; margin-bottom: 0.5rem;
-}
-.champ-name { font-size: 1.3rem; font-weight: 700; color: #c8a94e; margin-bottom: 0.3rem; }
-.champ-score { font-size: 0.85rem; color: #888; }
-
 /* ===== PHOTO GALLERY ===== */
 .gallery {
   background: linear-gradient(135deg, #0f2d14, #1a4a22);
@@ -315,36 +290,26 @@ section { padding: 6rem 2rem; }
 
 /* ===== SCHEDULE ===== */
 .schedule { background: #fafaf5; }
-.schedule-table-wrap {
+.schedule-tbd {
   margin-top: 3rem; background: #fff; border-radius: 20px;
-  overflow: hidden; box-shadow: 0 4px 30px rgba(0,0,0,0.06);
+  padding: 3.5rem 2rem; text-align: center;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.06);
+  border: 1px solid rgba(200,169,78,0.2);
 }
-.schedule-table { width: 100%; border-collapse: collapse; }
-.schedule-table thead { background: #0f2d14; }
-.schedule-table th {
-  padding: 1rem 1.5rem; text-align: left; color: #c8a94e;
-  font-size: 0.8rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+.schedule-tbd-badge {
+  display: inline-block; padding: 6px 20px; border-radius: 50px;
+  background: rgba(200,169,78,0.15); border: 1px solid rgba(200,169,78,0.35);
+  color: #8b7030; font-size: 0.78rem; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase; margin-bottom: 1.25rem;
 }
-.schedule-table td {
-  padding: 1rem 1.5rem; border-bottom: 1px solid #f0ede3;
-  font-size: 0.9rem; color: #444;
+.schedule-tbd h3 {
+  font-family: 'Playfair Display', serif; font-size: 1.75rem;
+  color: #0f2d14; margin-bottom: 0.75rem;
 }
-.schedule-table tr:last-child td { border-bottom: none; }
-.schedule-table tr:hover td { background: rgba(200,169,78,0.05); cursor: pointer; }
-.schedule-table tbody tr { transition: background 0.2s; }
-.schedule-table .view-arrow { color: #c8a94e; font-size: 0.85rem; opacity: 0; transition: opacity 0.2s; }
-.schedule-table tr:hover .view-arrow { opacity: 1; }
-.schedule-table .date-cell { font-weight: 600; color: #0f2d14; white-space: nowrap; }
-.schedule-table .event-cell { font-weight: 500; }
-.schedule-table .venue-cell { color: #888; font-size: 0.85rem; }
-.event-badge {
-  display: inline-block; padding: 3px 10px; border-radius: 20px;
-  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.5px; margin-left: 8px;
+.schedule-tbd p {
+  font-size: 1rem; color: #666; max-width: 520px;
+  margin: 0 auto; line-height: 1.7; font-weight: 300;
 }
-.badge-tournament { background: rgba(200,169,78,0.15); color: #8b7030; }
-.badge-meeting { background: rgba(59,130,246,0.12); color: #2563eb; }
-.badge-special { background: rgba(168,85,247,0.12); color: #7c3aed; }
-.badge-trip { background: rgba(236,72,153,0.12); color: #db2777; }
 
 /* ===== JOIN CTA ===== */
 .join-cta {
@@ -436,9 +401,7 @@ footer {
   .nav-links.active { display: flex; }
   .hamburger { display: flex; }
   .about-grid { grid-template-columns: 1fr; gap: 2rem; }
-  .champ-grid { grid-template-columns: 1fr; }
   .pillars-grid { grid-template-columns: 1fr; }
-  .schedule-table-wrap { overflow-x: auto; }
 }
 @media (max-width: 480px) {
   section { padding: 4rem 1.2rem; }
@@ -497,7 +460,6 @@ footer {
       <li><a href="index.html#about">About</a></li>
       <li><a href="index.html#history">History</a></li>
       <li><a href="index.html#experience">Experience</a></li>
-      <li><a href="index.html#champions">Champions</a></li>
       <li><a href="index.html#gallery">Gallery</a></li>
       <li><a href="index.html#schedule">Schedule</a></li>
       <li><a class='nav-cta' href='join.html'>Join Us</a></li>
@@ -524,7 +486,7 @@ footer {
     <p class="hero-tagline">Where the fun at the 19th hole makes up for the other eighteen. Join a community of golfers who play hard and laugh harder.</p>
     <div class="hero-buttons">
       <a class='btn-primary' href='join.html'>Join the Club &rarr;</a>
-      <a href="index.html#schedule" class="btn-secondary">View 2026 Schedule</a>
+      <a href="index.html#schedule" class="btn-secondary">View 2027 Schedule</a>
     </div>
   </div>
   <div class="hero-scroll">
@@ -540,8 +502,8 @@ footer {
       <div class="stat-label">Years Strong</div>
     </div>
     <div class="stat">
-      <div class="stat-number">21</div>
-      <div class="stat-label">Events in 2026</div>
+      <div class="stat-number">TBD</div>
+      <div class="stat-label">2027 Schedule</div>
     </div>
     <div class="stat">
       <div class="stat-number">NCGA</div>
@@ -664,40 +626,6 @@ footer {
   </div>
 </section>
 
-<!-- CHAMPIONS -->
-<section class="champions" id="champions">
-  <div class="container">
-    <div class="reveal" style="text-align:center;">
-      <span class="section-label">2025 Champions</span>
-      <h2 class="section-title">Congrats to Our Club Champions</h2>
-      <p class="section-desc" style="margin:0 auto;">Every year we crown the best of the best. Here are the 2025 title holders.</p>
-    </div>
-    <div class="champ-grid">
-      <div class="champ-card reveal">
-        <img class="champ-photo" src="images/champions-trophy.jpg" alt="Bill Asai - President's Cup Champion" loading="lazy">
-        <div class="champ-trophy">&#127942;</div>
-        <div class="champ-title">President's Cup Champion</div>
-        <div class="champ-name">Bill Asai</div>
-        <div class="champ-score">Net 70</div>
-      </div>
-      <div class="champ-card reveal">
-        <img class="champ-photo" src="images/craig-lee-award.jpg" alt="Craig Lee - Annual Low Net Champion" loading="lazy">
-        <div class="champ-trophy">&#127941;</div>
-        <div class="champ-title">Annual Low Net Champion</div>
-        <div class="champ-name">Craig Lee</div>
-        <div class="champ-score">Net 138</div>
-      </div>
-      <div class="champ-card reveal">
-        <img class="champ-photo" src="images/cliff-lai-award.jpg" alt="Cliff Lai - Annual Low Gross Champion" loading="lazy">
-        <div class="champ-trophy">&#11088;</div>
-        <div class="champ-title">Annual Low Gross Champion</div>
-        <div class="champ-name">Cliff Lai</div>
-        <div class="champ-score">Two-day Gross 148</div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- GALLERY -->
 <section class="gallery" id="gallery">
   <div class="container">
@@ -743,140 +671,19 @@ footer {
   </div>
 </section>
 
-<!-- 2026 SCHEDULE -->
+<!-- 2027 SCHEDULE -->
 <section class="schedule" id="schedule">
   <div class="container">
     <div class="reveal" style="text-align:center;">
       <span class="section-label">Mark Your Calendar</span>
-      <h2 class="section-title">2026 Season Schedule</h2>
+      <h2 class="section-title">2027 Season Schedule</h2>
       <p class="section-desc" style="margin:0 auto;">A full year of tournaments, member meetings, road trips, and good times. Come out for a day of golf and join in the fun!</p>
     </div>
-    <div class="schedule-table-wrap reveal">
-      <table class="schedule-table">
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Event</th>
-            <th>Details</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr onclick="location.href='events/members-meeting-1.html'">
-            <td class="date-cell">Feb 12 (Thu)</td>
-            <td class="event-cell">1st Members Meeting / Dinner<span class="event-badge badge-meeting">Meeting</span></td>
-            <td class="venue-cell">Cheung Hing Seafood, So. SF <span class="view-arrow">&rarr;</span></td>
-          </tr>
-          <tr onclick="location.href='events/paradise-valley.html'">
-            <td class="date-cell">Feb 15 (Sun)</td>
-            <td class="event-cell">Paradise Valley<span class="event-badge badge-tournament">Tournament</span></td>
-            <td class="venue-cell">Paradise Valley GC <span class="view-arrow">&rarr;</span></td>
-          </tr>
-          <tr onclick="location.href='events/coyote-creek.html'">
-            <td class="date-cell">Mar 8 (Sun)</td>
-            <td class="event-cell">Coyote Creek<span class="event-badge badge-tournament">Tournament</span></td>
-            <td class="venue-cell">Tournament Course <span class="view-arrow">&rarr;</span></td>
-          </tr>
-          <tr onclick="location.href='events/monarch-bay.html'">
-            <td class="date-cell">Apr 19 (Sun)</td>
-            <td class="event-cell">Monarch Bay<span class="event-badge badge-tournament">Tournament</span></td>
-            <td class="venue-cell">Monarch Bay GC <span class="view-arrow">&rarr;</span></td>
-          </tr>
-          <tr onclick="location.href='events/yocha-dehe.html'">
-            <td class="date-cell">Apr 29</td>
-            <td class="event-cell">Yocha Dehe (Cache Creek)<span class="event-badge badge-tournament">Tournament</span></td>
-            <td class="venue-cell">Yocha Dehe Golf Club at Cache Creek <span class="view-arrow">&rarr;</span></td>
-          </tr>
-          <tr onclick="location.href='events/members-meeting-2.html'">
-            <td class="date-cell">May 13 (Wed)</td>
-            <td class="event-cell">2nd Members Meeting / Dinner<span class="event-badge badge-meeting">Meeting</span></td>
-            <td class="venue-cell">Location TBD <span class="view-arrow">&rarr;</span></td>
-          </tr>
-          <tr onclick="location.href='events/callippe-preserve.html'">
-            <td class="date-cell">May 17 (Sun)</td>
-            <td class="event-cell">Callippe Preserve<span class="event-badge badge-tournament">Tournament</span></td>
-            <td class="venue-cell">Callippe Preserve GC <span class="view-arrow">&rarr;</span></td>
-          </tr>
-          <tr onclick="location.href='events/memorial-day-igolf.html'">
-            <td class="date-cell">May 23-24</td>
-            <td class="event-cell">iGolf Memorial Day<span class="event-badge badge-trip">Road Trip</span></td>
-            <td class="venue-cell">Carson City <span class="view-arrow">&rarr;</span></td>
-          </tr>
-          <tr onclick="location.href='events/canyon-lakes.html'">
-            <td class="date-cell">Jun 28 (Sun)</td>
-            <td class="event-cell">Canyon Lakes<span class="event-badge badge-tournament">Tournament</span></td>
-            <td class="venue-cell">Canyon Lakes GC (rescheduled from 2025) <span class="view-arrow">&rarr;</span></td>
-          </tr>
-          <tr onclick="location.href='events/metropolitan.html'">
-            <td class="date-cell">Jul 12 (Sun)</td>
-            <td class="event-cell">Metropolitan<span class="event-badge badge-tournament">Tournament</span></td>
-            <td class="venue-cell">Metropolitan GC <span class="view-arrow">&rarr;</span></td>
-          </tr>
-          <tr onclick="location.href='events/members-meeting-3.html'">
-            <td class="date-cell">Aug 11 (Tue)</td>
-            <td class="event-cell">3rd Members Meeting / Dinner<span class="event-badge badge-meeting">Meeting</span></td>
-            <td class="venue-cell">Location TBD <span class="view-arrow">&rarr;</span></td>
-          </tr>
-          <tr onclick="location.href='events/presidents-cup.html'">
-            <td class="date-cell">Aug 16 (Sun)</td>
-            <td class="event-cell">President's Cup<span class="event-badge badge-special">Major</span></td>
-            <td class="venue-cell">Poppy Ridge <span class="view-arrow">&rarr;</span></td>
-          </tr>
-          <tr onclick="location.href='events/weekday-tournament.html'">
-            <td class="date-cell">Aug 25</td>
-            <td class="event-cell">Weekday Tournament<span class="event-badge badge-tournament">Tournament</span></td>
-            <td class="venue-cell">Half Moon Bay or Cache Creek TBD <span class="view-arrow">&rarr;</span></td>
-          </tr>
-          <tr onclick="location.href='events/labor-day-igolf.html'">
-            <td class="date-cell">Sep 5-6</td>
-            <td class="event-cell">iGolf Labor Day 4-Cities<span class="event-badge badge-trip">Road Trip</span></td>
-            <td class="venue-cell">Seattle (TBR) <span class="view-arrow">&rarr;</span></td>
-          </tr>
-          <tr onclick="location.href='events/club-championship-day1.html'">
-            <td class="date-cell">Sep 13 (Sun)</td>
-            <td class="event-cell">Club Championship Day 1<span class="event-badge badge-special">Major</span></td>
-            <td class="venue-cell">Corica North, Alameda <span class="view-arrow">&rarr;</span></td>
-          </tr>
-          <tr onclick="location.href='events/club-championship-day2.html'">
-            <td class="date-cell">Sep 20 (Sun)</td>
-            <td class="event-cell">Club Championship Day 2<span class="event-badge badge-special">Major</span></td>
-            <td class="venue-cell">Rancho Solano GC <span class="view-arrow">&rarr;</span></td>
-          </tr>
-          <tr onclick="location.href='events/chinatown-ymca.html'">
-            <td class="date-cell">Sep 28 (Mon)</td>
-            <td class="event-cell">Chinatown YMCA Tournament<span class="event-badge badge-tournament">Tournament</span></td>
-            <td class="venue-cell">TBD <span class="view-arrow">&rarr;</span></td>
-          </tr>
-          <tr onclick="location.href='events/awards-dinner.html'">
-            <td class="date-cell">Oct 3 (Sat)</td>
-            <td class="event-cell">Annual Awards Dinner<span class="event-badge badge-special">Banquet</span></td>
-            <td class="venue-cell">Nick's Seafood, Pacifica <span class="view-arrow">&rarr;</span></td>
-          </tr>
-          <tr onclick="location.href='events/ghgc-road-trip.html'">
-            <td class="date-cell">Oct 6-7 (Tue)</td>
-            <td class="event-cell">GHGC Road Trip<span class="event-badge badge-trip">Road Trip</span></td>
-            <td class="venue-cell">Poppy Hills &amp; Pacific Grove <span class="view-arrow">&rarr;</span></td>
-          </tr>
-          <tr onclick="location.href='events/lone-tree.html'">
-            <td class="date-cell">Oct 18 (Sun)</td>
-            <td class="event-cell">Lone Tree<span class="event-badge badge-tournament">Tournament</span></td>
-            <td class="venue-cell">Lone Tree GC (TBR) <span class="view-arrow">&rarr;</span></td>
-          </tr>
-          <tr onclick="location.href='events/diablo-creek.html'">
-            <td class="date-cell">Nov 8 (Sun)</td>
-            <td class="event-cell">Diablo Creek<span class="event-badge badge-tournament">Tournament</span></td>
-            <td class="venue-cell">Diablo Creek GC <span class="view-arrow">&rarr;</span></td>
-          </tr>
-          <tr onclick="location.href='events/igolf-las-vegas.html'">
-            <td class="date-cell">Nov 12-15</td>
-            <td class="event-cell">iGolf Las Vegas<span class="event-badge badge-trip">Road Trip</span></td>
-            <td class="venue-cell">Las Vegas, NV <span class="view-arrow">&rarr;</span></td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="schedule-tbd reveal">
+      <div class="schedule-tbd-badge">Coming Soon</div>
+      <h3>2027 Schedule TBD</h3>
+      <p>We are finalizing our 2027 tournament dates, courses, and member gatherings. Check back soon for the full season calendar.</p>
     </div>
-    <p class="reveal" style="text-align:center; margin-top:1.5rem; font-size:0.82rem; color:#999;">
-      Schedule as of March 15, 2026. TBR = courses contacted, working to finalize. TBD = still in the works. Charity tournaments added as info becomes available.
-    </p>
   </div>
 </section>
 
@@ -915,7 +722,6 @@ footer {
       <a href="index.html#about">About</a>
       <a href="index.html#history">History</a>
       <a href="index.html#experience">Experience</a>
-      <a href="index.html#champions">Champions</a>
       <a href="index.html#gallery">Gallery</a>
       <a href="index.html#schedule">Schedule</a>
       <a href='join.html'>Join Us</a>
